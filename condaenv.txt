@@ -1,14 +1,18 @@
 #Create a conda environment
 conda create --name <environment-name> python=<version:2.7/3.5>
 or
-conda env create -f env.yml
+conda env create -f env.yml --prefix ./envs
 
 #To create a requirements.txt file:
 conda list -e > requirements.txt #Save all the info about packages to your folder
 
 #To export environment file
 activate <environment-name>
-conda env export > <environment-name>.yml
+conda env export --from-history | grep -v "prefix" > <environment-name>.yml
+# --from-history will only include packages that you’ve explicitly asked for, as opposed to including every package in your environment.
+# Use the existing argument --no-builds to keep just the leading version numbers
+# 如果直接导出 导出的结果会是 pytorch=2.0.0=cpu_py311hb4bb8ad_0 这种样子 加上 --no-builds 就只保留 pytorch=2.0.0
+# 发现如果加了 --from-history 就不用加 --no-builds 了
 
 #pip freeze
 pip freeze > requirements.txt
