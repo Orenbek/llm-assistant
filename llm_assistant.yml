@@ -1,0 +1,38 @@
+name: llm_assistant
+channels:
+  - conda-forge
+dependencies:
+  - fire=0.5.0
+  - langchain=0.0.168
+  - openai=0.27.6
+  - python=3.11.3
+  - python-dotenv=1.0.0
+  - sentencepiece=0.1.97
+  - transformers=4.29.1
+  - pip:
+      - autopep8==2.0.2
+      - brotlipy==0.7.0
+      - colorama==0.4.6
+      - conda-env-export==0.4.5
+      - dataclasses==0.8
+      - datasets==2.12.0
+      - gmpy2==2.1.2
+      - greenlet==2.0.2
+      - importlib-metadata==6.6.0
+      - matplotlib==3.7.1
+      - munkres==1.1.4
+      - openpyxl==3.1.2
+      - pandas-stubs==2.0.1.230501
+      - pip==23.1.2
+      - plotly==5.14.1
+      - pooch==1.7.0
+      - pyOpenSSL==23.1.1
+      - PySocks==1.7.1
+      - rouge-score==0.1.2
+      - sacremoses==0.0.53
+      - scikit-learn==1.2.2
+      - stringcase==1.2.0
+      - torch==2.0.0
+      - wandb==0.15.2
+      - wheel==0.40.0
+prefix: /Users/orenbek/mambaforge/envs/llm_assistant

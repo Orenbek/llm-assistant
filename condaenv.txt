@@ -14,6 +14,10 @@ conda env export --from-history | grep -v "prefix" > <environment-name>.yml
 # 如果直接导出 导出的结果会是 pytorch=2.0.0=cpu_py311hb4bb8ad_0 这种样子 加上 --no-builds 就只保留 pytorch=2.0.0
 # 发现如果加了 --from-history 就不用加 --no-builds 了
 
+# 遇到的另外一个蛋疼的问题 --from-history 会抛弃 pip 中的依赖
+# 解决方案 使用 conda-env-export 虽然输出跟 conda 的不太一样 但是满足需求了
+conda-env-export | grep -v "prefix" > <environment-name>.yml
+# 更简单直接的方式 python export_env.py -o env.yml
 #pip freeze
 pip freeze > requirements.txt
 #install with requirements.txt
