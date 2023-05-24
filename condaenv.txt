@@ -2,6 +2,10 @@
 conda create --name <environment-name> python=<version:2.7/3.5>
 or
 conda env create -f env.yml --prefix ./.envs
+conda activate ./.envs
+#There are a few things to be aware of when placing conda environments outside of the default envs folder.
+#- Conda can no longer find your environment with the --name flag. You’ll generally need to pass the --prefix flag along with the environment’s full path to find the environment.
+#- Specifying an install path when creating your conda environments makes it so that your command prompt is now prefixed with the active environment’s absolute path rather than the environment’s name.
 
 #To create a requirements.txt file:
 conda list -e > requirements.txt #Save all the info about packages to your folder
