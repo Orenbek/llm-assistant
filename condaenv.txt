@@ -1,7 +1,7 @@
 #Create a conda environment
 conda create --name <environment-name> python=<version:2.7/3.5>
 or
-conda env create -f env.yml --prefix ./envs
+conda env create -f env.yml --prefix ./.envs
 
 #To create a requirements.txt file:
 conda list -e > requirements.txt #Save all the info about packages to your folder

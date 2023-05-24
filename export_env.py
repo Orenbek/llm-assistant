@@ -60,6 +60,7 @@ def _combine_env_data(env_data_full, env_data_hist):
     pip_deps = _get_pip_deps(deps_full)
 
     env_data = {}
+    env_data['name'] = env_data_full['name']
     env_data['channels'] = env_data_full['channels']
     env_data['dependencies'] = deps
     env_data['dependencies'].append(pip_deps)
